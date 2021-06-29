@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -18,6 +19,12 @@ public class Ingredient {
 
     private String description;
     private BigDecimal amount;
+
+    @ManyToMany
+    private Set<Category> categories;
+
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty;
 
     @ManyToOne
     private Recipe recipe;

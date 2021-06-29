@@ -36,4 +36,7 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
+    @ManyToMany
+    private Set<Category> categories;
+
 }
