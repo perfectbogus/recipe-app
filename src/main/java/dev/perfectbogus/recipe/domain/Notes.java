@@ -13,7 +13,7 @@ public class Notes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private Long id;
 
     @OneToOne
     private Recipe recipe;
