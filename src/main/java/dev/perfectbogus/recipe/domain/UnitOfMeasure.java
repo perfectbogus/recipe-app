@@ -4,25 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
-public class Ingredient {
+public class UnitOfMeasure {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
 
     private String description;
-    private BigDecimal amount;
-
-    @ManyToOne
-    private Recipe recipe;
-
-    @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure uom;
 
 }
